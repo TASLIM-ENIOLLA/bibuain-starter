@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
+
 import { Fragment } from "react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 
 import { Button } from "@/components/shadcn/ui/button";
 import { Card, CardContent } from "@/components/shadcn/ui/card";
 import { CardFooter, CardHeader } from "@/components/shadcn/ui/card";
-import Image from "next/image";
-import { ArrowDown, ArrowUp } from "lucide-react";
 
 interface GridProps {
   data: Array<{
@@ -52,7 +53,7 @@ export function Grid({ data }: GridProps) {
                     ? "text-green-300"
                     : "text-red-300"
                   )}`}>
-                    <ArrowDown />
+                    {percent > 0 ? <ArrowUp /> : <ArrowDown />}
                     <p className="text-xs font-bold">
                       <span className="capitalize">
                         {percent}%
