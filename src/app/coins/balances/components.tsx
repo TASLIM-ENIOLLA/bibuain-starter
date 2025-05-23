@@ -8,6 +8,7 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "@/components/shadcn/ui/button";
 import { Card, CardContent } from "@/components/shadcn/ui/card";
 import { CardFooter, CardHeader } from "@/components/shadcn/ui/card";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/shadcn/ui/alert-dialog";
 
 interface GridProps {
   data: Array<{
@@ -100,11 +101,27 @@ export function Grid({ data }: GridProps) {
                   </p>
                 </div>
                 <div className="flex-none">
-                  <Button className="text-xs font-bold">
-                    <span className="capitalize">
-                      exchange coin
-                    </span>
-                  </Button>
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button className="text-xs font-bold">
+                        <span className="capitalize">
+                          exchange coin
+                        </span>
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          This action cannot be undone. This will exchange your excess coins ({excess} {name}) for the current rate.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction>Continue</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </div>
               </CardFooter>
             </Card>
