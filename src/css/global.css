@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./variables.css";
+@import "./theme.css";
+@import "./utilities.css";
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    outline-color: var(--color-ring);
+  }
+  body {
+    font-size: small;
+
+    color: var(--color-foreground);
+    background: var(--color-background);
+  }
+}
+
+@layer components {
+  .sentence {
+    @apply inline-block first-letter:uppercase
+  }
+}
