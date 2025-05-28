@@ -14,7 +14,7 @@ import { DropdownMenuTrigger } from "@/components/shadcn/ui/dropdown-menu";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/shadcn/ui/card";
 import { DropdownMenu, DropdownMenuContent } from "@/components/shadcn/ui/dropdown-menu";
 import { DropdownMenuGroup, DropdownMenuItem } from "@/components/shadcn/ui/dropdown-menu";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/shadcn/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/shadcn/ui/dialog";
 
 export default function Page() {
   const data = [
@@ -135,7 +135,7 @@ function Balance(props: {
           </p>
         </div>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent  className="space-y-3">
         <div className="space-y-0">
           <p className="font-bold text-xs">
             <span className="capitalize text-muted-foreground">
@@ -173,9 +173,9 @@ function Balance(props: {
           </p>
         </div>
         <div className="flex-none">
-          <Dialog open={open}>
+          <Dialog>
             <DialogTrigger asChild>
-              <Button onClick={() => setOpen(true)} size="sm" variant="default" className="text-xs text-white">
+              <Button size="sm" variant="default" className="text-xs text-white">
                 <span className="capitalize">
                   exchange coin
                 </span>
@@ -259,18 +259,22 @@ function Balance(props: {
                 <div className="col-span-12">
                   <div className="flex gap-3 items-center justify-end">
                     <div className="flex-none">
-                      <Button onClick={() => setOpen(false)} variant="outline" className="text-sm h-auto !bg-transparent">
-                        <span className="capitalize text-black">
-                          cancel
-                        </span>
-                      </Button>
+                      <DialogClose asChild>
+                        <Button variant="outline" className="text-sm h-auto !bg-transparent">
+                          <span className="capitalize text-black">
+                            cancel
+                          </span>
+                        </Button>
+                      </DialogClose>
                     </div>
                     <div className="flex-none">
-                      <Button onClick={() => setOpen(false)} variant="default" className="h-auto text-sm">
-                        <span className="capitalize text-white">
-                          execute sell trade
-                        </span>
-                      </Button>
+                      <DialogClose asChild>
+                        <Button variant="default" className="h-auto text-sm">
+                          <span className="capitalize text-white">
+                            execute sell trade
+                          </span>
+                        </Button>
+                      </DialogClose>
                     </div>
                   </div>
                 </div>
