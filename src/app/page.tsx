@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 import { ArrowDown, ArrowUp, ChevronDown, RefreshCcw } from "lucide-react";
 
@@ -109,8 +109,6 @@ function Balance(props: {
   excess_coin: number;
   change_percent: number;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <Card className="gap-3">
       <CardHeader className="flex items-center justify-between">
