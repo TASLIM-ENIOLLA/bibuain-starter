@@ -69,21 +69,15 @@ export default function Page() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="bottom" align="end" className="w-48">
                   <DropdownMenuGroup>
-                    <DropdownMenuLabel className="text-xs font-bold">
-                      <span className="capitalize">
-                        refresh
-                      </span>
-                    </DropdownMenuLabel>
-                    <DropdownMenuItem className="text-sm font-bold">
-                      <span className="sentence">
-                        ethereum
-                      </span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="text-sm font-bold">
-                      <span className="sentence">
-                        bitcoin
-                      </span>
-                    </DropdownMenuItem>
+                    {["All", "Binance", "Coinbase", "Kraken"].map((type, index) => (
+                      <Fragment key={index}>
+                        <DropdownMenuItem className="text-xs font-bold">
+                          <span className="capitalize">
+                            {type}
+                          </span>
+                        </DropdownMenuItem>
+                      </Fragment>
+                    ))}
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -186,7 +180,7 @@ export default function Page() {
                                       current rate
                                     </span>
                                   </Label>
-                                  <Input disabled defaultValue="US $62,500.00" />
+                                  <Input disabled defaultValue="US $62,500.00" className="p-0 border-none shadow-none !bg-transparent" />
                                 </div>
                               </div>
                               <div className="col-span-12">
@@ -240,14 +234,14 @@ export default function Page() {
                               <div className="col-span-12">
                                 <div className="flex gap-3 items-center justify-end">
                                   <div className="flex-none">
-                                    <Button variant="outline" className="text-sm font-bold">
-                                      <span className="capitalize text-muted-foreground">
+                                    <Button variant="outline" className="text-sm h-auto !bg-transparent">
+                                      <span className="capitalize text-black">
                                         cancel
                                       </span>
                                     </Button>
                                   </div>
                                   <div className="flex-none">
-                                    <Button variant="default" className="text-sm font-bold">
+                                    <Button variant="default" className="h-auto text-sm">
                                       <span className="capitalize text-white">
                                         execute sell trade
                                       </span>
