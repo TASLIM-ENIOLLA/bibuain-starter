@@ -8,10 +8,10 @@ import { Input } from "@/components/shadcn/ui/input";
 import { Label } from "@/components/shadcn/ui/label";
 import { Switch } from "@/components/shadcn/ui/switch";
 import { Button } from "@/components/shadcn/ui/button";
+import { DropdownMenuTrigger } from "@/components/shadcn/ui/dropdown-menu";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/shadcn/ui/card";
 import { DropdownMenu, DropdownMenuContent } from "@/components/shadcn/ui/dropdown-menu";
 import { DropdownMenuGroup, DropdownMenuItem } from "@/components/shadcn/ui/dropdown-menu";
-import { DropdownMenuLabel, DropdownMenuTrigger } from "@/components/shadcn/ui/dropdown-menu";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/shadcn/ui/dialog";
 
 export default function Page() {
